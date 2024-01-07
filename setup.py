@@ -4,12 +4,12 @@ from opencv_fixer import AutoFix
 
 class AutoFixCommand(install):
     def run(self):
-        AutoFix()
         install.run(self)
+        AutoFix()
 
 setup(
     name='opencv_fixer',
-    version='0.2.4',
+    version='0.2.5',
     license='Apache 2.0',
     author="soulteary",
     author_email="soulteary@gmail.com",
