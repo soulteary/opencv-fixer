@@ -1,15 +1,15 @@
 from setuptools import setup, find_packages
 from setuptools.command.install import install
-from fixer.main import AutoFix
+from opencv_fixer import AutoFix
 
 class AutoFixCommand(install):
     def run(self):
-        install.run(self)
         AutoFix()
+        install.run(self)
 
 setup(
-    name='opencv-fixer',
-    version='0.1',
+    name='opencv_fixer',
+    version='0.2.4',
     license='Apache 2.0',
     author="soulteary",
     author_email="soulteary@gmail.com",
