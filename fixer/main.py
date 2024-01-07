@@ -46,7 +46,7 @@ def AutoFix():
                 print(f"Install opencv-python-headless failed: {cmd.stderr}")
                 return False
             print(f"Install opencv-python-headless successfully, version={cmd.stdout}")
-        return True, ver
+        return True
     except OSError as e:
         print(f"Remove: {packagePath} : {e.strerror}")
         return False
@@ -69,4 +69,8 @@ def uninstall_packages(packages):
             print(uninstall_output.stdout)
             print(uninstall_output.stderr)
 
-AutoFix()
+if __name__ == "__main__":
+    if AutoFix():
+        print("Fixed successfully")
+    else:
+        print("It seems that your opencv-python version is higher than 4.9, no need to fix")
